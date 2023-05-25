@@ -1,0 +1,104 @@
+@use 'variables';
+@use 'header';
+@use 'hero';
+@use 'filmes';
+@use 'series';
+@use 'elenco';
+@use 'jogos';
+@use 'footer';
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
+
+    @media (max-width: 820px) {
+        scroll-padding-top: 70px;
+    }
+
+    @media (max-width: 768px) {
+        scroll-padding-top: 70px;
+    }
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    background-image: url(/dist/images/space-background.png);
+    background-size: 40%;
+}
+
+.container {
+    max-width: 1024px;
+    width: 100%;
+    margin: 0 auto;
+    
+    @media (max-width: 820px) {
+        max-width: 750px;
+        width: 80%;
+        margin: 0 auto;
+    }
+}
+
+@mixin text($font-size: 16px) {
+    font-size: $font-size;
+    line-height: $font-size + 10px;
+    color: variables.$corTitulo;
+}
+
+@mixin title($font-size: 40px) {
+    @include text($font-size);
+    color: variables.$corTitulo;
+}
+
+.title--big {
+    @include title(28px);
+}
+
+.title--medium {
+    @include title(18px);
+    
+    @media (max-width: 768px) {
+        @include title(17px);
+    }
+}
+
+.title--small {
+    @include title(13px);
+}
+
+.title--videogames {
+    @include title(20px);
+    padding-top: 50px;
+    padding-bottom: 30px;
+}
+
+.title--expandir-recolher {
+    @include title(18px);
+    color: rgb(11, 146, 24);
+    transition: all 0.5s ease-in-out;
+}
+
+.title--series {
+    @include title(22px);
+
+    &--not-selected {
+        cursor: pointer;
+        color: darken(variables.$corTitulo, 30%);
+        transition: ease 0.2s;
+
+        &:hover {
+            color: lighten(variables.$corTitulo, 20%);
+            transition: ease 0.2s;
+        }
+    }
+
+    &--selected {
+        color: yellow;
+    }
+    
+}

@@ -1,0 +1,21 @@
+@use 'variables';
+
+.footer {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    padding: 30px 0;
+    background-color: #43053a;
+    border-top: 2px solid #fff;
+
+    p {
+        color: variables.$corTitulo;
+        padding-left: 25px;
+        padding-right: 25px;
+    }
+
+    img {
+        height: 30px;
+    }
+}
