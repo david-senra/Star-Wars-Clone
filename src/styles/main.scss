@@ -17,6 +17,8 @@ html {
 
     @media (max-width: 768px) {
         scroll-padding-top: 70px;
+        max-width: 100%;
+        overflow-x: hidden;
     }
 }
 
