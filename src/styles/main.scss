@@ -16,7 +16,7 @@ html {
     }
 
     @media (max-width: 768px) {
-        scroll-padding-top: 70px;
+        scroll-padding-top: 20px;
         max-width: 100%;
         overflow-x: hidden;
     }
@@ -35,7 +35,7 @@ body {
 
     @media (max-width: 768px) {
         max-width: 100%;
-        overflow-x: hidden;
+        contain: paint;
     }
 }
 
