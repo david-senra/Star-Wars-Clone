@@ -6,10 +6,12 @@
 
     &__container {
         
-        min-height: 60vh;
-        background-image: url(/dist/images/hero-background.jpg);
+        min-height: 80vh;
+        background-image: url(/dist/images/background-two.png);
         background-repeat: no-repeat;
         background-position: center;
+        background-size: 923px 720px;
+        width: 80%;
         text-align: center;
         position: relative;
         display: flex;
@@ -36,7 +38,7 @@
             justify-content: end;
             
             &__image {
-                width: 60%;
+                width: 65%;
             }
 
             &__text {
@@ -44,6 +46,52 @@
                 color: rgb(255, 217, 0);
                 font-size: 24px;
                 margin-bottom: 25px;
+            }
+        }
+
+        @media (max-width: 900px) {
+            background-size: cover;
+            min-height: 55vh;
+            &__contents {
+                &__image {
+                    width: 62%;
+                }
+    
+                &__text {
+                    font-size: 20px;
+                }
+            }
+        }
+
+        @media (max-width: 760px) {
+            background-size: cover;
+            min-height: 47vh;
+            &__contents {
+                &__image {
+                    width: 56%;
+                }
+    
+                &__text {
+                    font-size: 18px;
+                    margin-top: 10px;
+                }
+            }
+        }
+
+        @media (max-width: 550px) {
+            background-size: cover;
+            min-height: 40vh;
+            &__contents {
+                &__image {
+                    width: 75%;
+                }
+    
+                &__text {
+                    font-size: 16px;
+                    margin-top: 15px;
+                    width: 300px;
+                    padding-right: 20px;
+                }
             }
         }
     }

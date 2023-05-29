@@ -100,5 +100,10 @@ body {
     &--selected {
         color: yellow;
     }
+
+    @media (max-width: 768px) {
+        font-size: 15px;
+        white-space: nowrap;
+    }
     
 }

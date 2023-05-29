@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     const botoesVideogame = document.querySelectorAll('.videogames');
     const textosVideogame = document.querySelectorAll('.textos-videogames');
+    const linksVideogame = document.querySelectorAll('.links-videogames');
 
     const heroSection = document.querySelector('.hero');
     const alturaHero = heroSection.clientHeight;
@@ -25,56 +26,101 @@ document.addEventListener('DOMContentLoaded', function() {
     prevButton.addEventListener("click", () => {
         var window_width = window.innerWidth;
         let slideWidth = 0;
-        console.log(window.innerWidth);
+        console.log(slideAtual, ' previous');
         if (window_width > 1500) {
             slideWidth = slidesContainer.offsetWidth/3.1;
         }
-        else if (window_width > 1000) {
+        else if (window_width > 1050) {
             slideWidth = slidesContainer.offsetWidth/3;
         }
-        else if (window_width > 900) {
-            slideWidth = slidesContainer.offsetWidth/2.2;
+        else if (window_width > 800) {
+            slideWidth = slidesContainer.offsetWidth/2.15;
         }
-        else if (window_width > 700) {
-            slideWidth = slidesContainer.offsetWidth;
+        else if (window_width > 750) {
+            slideWidth = slidesContainer.offsetWidth/1.1;
         }
-        else {
-            slideWidth = slidesContainer.offsetWidth;
-        }
-
-        if (slideAtual > 3) {
-        }
-        else if (slideAtual > 2) {
-            slidesContainer.scrollLeft += slideWidth;
-            prevButton.classList.remove('elenco__container__list__item--button__button--activated');
-            prevButton.classList.add('elenco__container__list__item--button__button--deactivated');
-            nextButton.classList.add('elenco__container__list__item--button__button--activated');
-            nextButton.classList.remove('elenco__container__list__item--button__button--deactivated');
-            slideAtual++;
+        else if (window_width > 600) {
+            slideWidth = slidesContainer.offsetWidth/0.990;
         }
         else {
-            slidesContainer.scrollLeft += slideWidth;
-            nextButton.classList.add('elenco__container__list__item--button__button--activated');
-            nextButton.classList.remove('elenco__container__list__item--button__button--deactivated');
-            slideAtual++;
+            slideWidth = slidesContainer.offsetWidth;
         }
+        if (window_width > 1050)
+        {
+            if (slideAtual > 3) {
+            }
+            else if (slideAtual > 2) {
+                slidesContainer.scrollLeft += slideWidth;
+                prevButton.classList.remove('elenco__container__list__item--button__button--activated');
+                prevButton.classList.add('elenco__container__list__item--button__button--deactivated');
+                nextButton.classList.add('elenco__container__list__item--button__button--activated');
+                nextButton.classList.remove('elenco__container__list__item--button__button--deactivated');
+                slideAtual++;
+            }
+            else {
+                slidesContainer.scrollLeft += slideWidth;
+                nextButton.classList.add('elenco__container__list__item--button__button--activated');
+                nextButton.classList.remove('elenco__container__list__item--button__button--deactivated');
+                slideAtual++;
+            }
+        }
+        else if (window_width > 800) {
+            if (slideAtual > 4) {
+            }
+            else if (slideAtual > 3) {
+                slidesContainer.scrollLeft += slideWidth;
+                prevButton.classList.remove('elenco__container__list__item--button__button--activated');
+                prevButton.classList.add('elenco__container__list__item--button__button--deactivated');
+                nextButton.classList.add('elenco__container__list__item--button__button--activated');
+                nextButton.classList.remove('elenco__container__list__item--button__button--deactivated');
+                slideAtual++;
+            }
+            else {
+                slidesContainer.scrollLeft += slideWidth;
+                nextButton.classList.add('elenco__container__list__item--button__button--activated');
+                nextButton.classList.remove('elenco__container__list__item--button__button--deactivated');
+                slideAtual++;
+            }
+        }
+        else {
+            if (slideAtual > 5) {
+            }
+            else if (slideAtual > 4) {
+                slidesContainer.scrollLeft += slideWidth;
+                prevButton.classList.remove('elenco__container__list__item--button__button--activated');
+                prevButton.classList.add('elenco__container__list__item--button__button--deactivated');
+                nextButton.classList.add('elenco__container__list__item--button__button--activated');
+                nextButton.classList.remove('elenco__container__list__item--button__button--deactivated');
+                slideAtual++;
+            }
+            else {
+                slidesContainer.scrollLeft += slideWidth;
+                nextButton.classList.add('elenco__container__list__item--button__button--activated');
+                nextButton.classList.remove('elenco__container__list__item--button__button--deactivated');
+                slideAtual++;
+            }
+        }
+        
     });
 
     nextButton.addEventListener("click", () => {
         var window_width = window.innerWidth;
         let slideWidth = 0;
-        console.log(window.innerWidth);
+        console.log(slideAtual, ' next');
         if (window_width > 1500) {
             slideWidth = slidesContainer.offsetWidth/3.1;
         }
-        else if (window_width > 1000) {
+        else if (window_width > 1050) {
             slideWidth = slidesContainer.offsetWidth/3;
         }
-        else if (window_width > 900) {
-            slideWidth = slidesContainer.offsetWidth/2.2;
+        else if (window_width > 800) {
+            slideWidth = slidesContainer.offsetWidth/2.15;
         }
-        else if (window_width > 700) {
-            slideWidth = slidesContainer.offsetWidth;
+        else if (window_width > 750) {
+            slideWidth = slidesContainer.offsetWidth/1.1;
+        }
+        else if (window_width > 600) {
+            slideWidth = slidesContainer.offsetWidth/0.990;
         }
         else {
             slideWidth = slidesContainer.offsetWidth;
@@ -124,6 +170,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     for (let i = 0; i < botoesVideogame.length; i++) {
         botoesVideogame[i].addEventListener('mouseover', function(botao) {
+            let pai = botao.target.parentElement;
+
             const botaoAlvo = botao.target;
             imagemAlvo = botaoAlvo.src;
             index = imagemAlvo.lastIndexOf("/");
@@ -133,8 +181,17 @@ document.addEventListener('DOMContentLoaded', function() {
             }
             imagemAlvo = `./../../dist/images/jogos/${filename}-orange.png`;
             botaoAlvo.src = imagemAlvo;
+
+            let objeto = "";
+            if (pai.hasChildNodes()) {
+                let children = pai.childNodes;
+                objeto = children[3];
+            }
+            objeto.classList.add('jogos__container__list__menu__item__title--hoverizou');
         })
         botoesVideogame[i].addEventListener('mouseleave', function(botao) {
+            let pai = botao.target.parentElement;
+
             const botaoAlvo = botao.target;
             imagemAlvo = botaoAlvo.src;
             index = imagemAlvo.lastIndexOf("/");
@@ -144,17 +201,27 @@ document.addEventListener('DOMContentLoaded', function() {
             }
             imagemAlvo = `./../../dist/images/jogos/${filename}.png`;
             botaoAlvo.src = imagemAlvo;
-        })
-    }
 
-    for (let i = 0; i < textosVideogame.length; i++) {
-        textosVideogame[i].addEventListener('mouseover', function(botao) {
-            const botaoAlvo = botao.target;
-            pai = botaoAlvo.parentElement;
             let objeto = "";
             if (pai.hasChildNodes()) {
                 let children = pai.childNodes;
+                objeto = children[3];
+            }
+            objeto.classList.remove('jogos__container__list__menu__item__title--hoverizou');
+        })
+    }
+
+    
+    for (let i = 0; i < textosVideogame.length; i++) {
+        textosVideogame[i].addEventListener('mouseover', function(botao) {
+            const botaoAlvo = botao.target;
+            let pai = botaoAlvo.parentElement;
+            let objeto = "";
+            let objeto2 = "";
+            if (pai.hasChildNodes()) {
+                let children = pai.childNodes;
                 objeto = children[1];
+                objeto2 = children[3];
             }
             imagemAlvo = objeto.src;
             index = imagemAlvo.lastIndexOf("/");
@@ -164,14 +231,17 @@ document.addEventListener('DOMContentLoaded', function() {
             }
             imagemAlvo = `./../../dist/images/jogos/${filename}-orange.png`;
             objeto.src = imagemAlvo;
+            objeto2.classList.add('jogos__container__list__menu__item__title--hoverizou');
         })
         textosVideogame[i].addEventListener('mouseleave', function(botao) {
             const botaoAlvo = botao.target;
             pai = botaoAlvo.parentElement;
             let objeto = "";
+            let objeto2 = "";
             if (pai.hasChildNodes()) {
                 let children = pai.childNodes;
                 objeto = children[1];
+                objeto2 = children[3];
             }
             imagemAlvo = objeto.src;
             index = imagemAlvo.lastIndexOf("/");
@@ -181,10 +251,9 @@ document.addEventListener('DOMContentLoaded', function() {
             }
             imagemAlvo = `./../../dist/images/jogos/${filename}.png`;
             objeto.src = imagemAlvo;
+            objeto2.classList.remove('jogos__container__list__menu__item__title--hoverizou');
         })
-    }
-
-    
+    }   
 
 })
 

@@ -57,10 +57,6 @@
                         }
                     }
 
-                    &:hover &__title {
-                        color: rgb(255, 200, 3);
-                    }
-
                     @media (max-width: 768px) {       
                         &:nth-child(1) {
                             padding-bottom: 30px;
@@ -108,7 +104,6 @@
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                cursor: pointer;
 
                 &__seta {
                     text-align: center;
