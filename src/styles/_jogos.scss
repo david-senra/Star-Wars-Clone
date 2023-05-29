@@ -111,6 +111,11 @@
                     padding-left: 20px;
                     transform: scaleY(1);
                     transition: all 1s ease-in-out;
+                    cursor: pointer;
+                }
+
+                &__text {
+                    cursor: pointer;
                 }
 
                 &:hover {
