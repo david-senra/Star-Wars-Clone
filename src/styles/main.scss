@@ -32,6 +32,11 @@ html {
 body {
     background-image: url(/dist/images/space-background.png);
     background-size: 40%;
+
+    @media (max-width: 768px) {
+        max-width: 100%;
+        overflow-x: hidden;
+    }
 }
 
 .container {
